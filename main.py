@@ -23,7 +23,7 @@ if __name__ == "__main__":
         datefmt='%Y-%m-%d %H:%M:%S'
     )
 
-# İzlemek istediğim dizin burada bulunan path kısmına yazılıyor /  The directory I want to watch is written in the path section here.
+# İzlemek istenilen dizin burada bulunan path kısmına yazılıyor /  The directory you want to watch is written in the path section here.
 
     path = "./test_directory"
     event_handler = IDSHandler()
