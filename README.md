@@ -21,4 +21,4 @@ It's not intended for production use — purely educational.
 
 👤 Author: [EtherealSentinel](https://github.com/EtherealSentinel)
 
-🔒 Repository is private and shared only for learning, documentation and skill development purposes.
+- still under development
