@@ -4,12 +4,4 @@
 2025-04-26 13:26:39 - [+] File created: ./test_directory\test_rich2.txt
 2025-04-26 13:38:19 - [+] File created: ./test_directory\TestConfig_json.txt
 2025-04-26 13:43:04 - [!] File modified: ./test_directory\test_rich2.txt
-2025-04-26 13:43:04 - [!] File modified: ./test_directory\test_rich2.txt
-2025-04-26 13:43:04 - [!] File modified: ./test_directory\test_rich2.txt
-2025-04-26 13:43:22 - [!] File modified: ./test_directory\test_rich2.txt
-2025-04-26 13:43:22 - [!] File modified: ./test_directory\test_rich2.txt
-2025-04-26 13:43:22 - [!] File modified: ./test_directory\test_rich2.txt
-2025-04-26 13:43:49 - [+] File created: ./test_directory\Test_rich.txt
-2025-04-26 13:44:04 - [-] File deleted: ./test_directory\Test_rich.txt
-2025-04-26 13:53:33 - [MODIFIED] ./test_directory\test_rich2.txt
-2025-04-26 13:53:43 - [MODIFIED] ./test_directory\test_rich2.txt
+
