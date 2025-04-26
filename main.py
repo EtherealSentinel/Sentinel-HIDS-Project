@@ -1,18 +1,26 @@
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
+from rich.console import Console
 import time
 import logging
+
+# console object create
+
+console = Console()
 
 # Bu kısımda logging kullanılarak hedef dizinde oluşan dedğişikler kayıt altına alınıyor /  The directory I want to watch is written in the path section here.
 
 class IDSHandler(FileSystemEventHandler):
     def on_created(self, event):
+        console.print(f"[green][+] File created:[/] {event.src_path}")
         logging.info(f"[+] File created: {event.src_path}")
 
     def on_deleted(self, event):
+        console.print(f"[red][-] File deleted:[/] {event.src_path}")
         logging.warning(f"[-] File deleted: {event.src_path}")
 
     def on_modified(self, event):
+        console.print(f"[yellow][!] File modified:[/] {event.src_path}")
         logging.warning(f"[!] File modified: {event.src_path}")
 
 if __name__ == "__main__":
@@ -37,4 +45,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         observer.stop()
     observer.join()
+
 
