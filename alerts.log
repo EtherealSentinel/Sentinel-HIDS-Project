@@ -5,3 +5,10 @@
 2025-04-26 13:38:19 - [+] File created: ./test_directory\TestConfig_json.txt
 2025-04-26 13:43:04 - [!] File modified: ./test_directory\test_rich2.txt
 
+2025-04-27 14:44:35 - [MODIFIED] ./test_directory\Test.txt | New Hash: b5d764cc3ab7616f7306d0689557d83eb8d60ecd2bc9d1b6fbabeb4088eacf8e
+2025-04-27 14:44:50 - [CREATED] ./test_directory\hashtest.txt | Hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-04-27 14:44:57 - [MODIFIED] ./test_directory\Test.txt | New Hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-04-27 14:45:42 - [DELETED] ./test_directory\test_rich2.txt
+2025-04-27 14:51:40 - [CREATED] ./test_directory\Alerttest.txt | Hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-04-27 14:51:53 - [-] File deleted: ./test_directory\Alerttest.txt
+2025-04-27 14:51:53 - [ALERT] File deleted: ./test_directory\Alerttest.txt

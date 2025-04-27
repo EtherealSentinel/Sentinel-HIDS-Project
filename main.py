@@ -5,6 +5,7 @@ import time
 import logging
 import json
 import time
+import hashlib
 
 
 #işletim sissteminden kaynaklanan çok kısa süre içerisinden birden çok modified logunun kayıt altına alınmasını engellemek için eklendi
@@ -15,24 +16,63 @@ last_modified_times = {}
 
 console = Console()
 
+#hash file
+
+file_hashes = {} 
+
+# Alert Logger
+
+alert_logger = logging.getLogger('alertLogger')
+alert_handler = logging.FileHandler('critical_alerts.log')
+alert_formatter = logging.Formatter('%(asctime)s - %(message)s')
+alert_handler.setFormatter(alert_formatter)
+alert_logger.addHandler(alert_handler)
+alert_logger.setLevel(logging.WARNING)
+
+#Hash değerini hesaplayan fonksiyon / calculate hash 
+
+def calculate_hash(file_path):
+    try:
+        sha256_hash = hashlib.sha256()
+        with open(file_path, "rb") as f:
+            for byte_block in iter(lambda: f.read(4096), b""):
+                sha256_hash.update(byte_block)
+        return sha256_hash.hexdigest()
+    except Exception as e:
+        return None  # Dosya silinmiş olabilir vs.
+
+
 # Bu kısımda logging kullanılarak hedef dizinde oluşan dedğişikler kayıt altına alınıyor /  The directory I want to watch is written in the path section here.
 
 class IDSHandler(FileSystemEventHandler):
     def on_created(self, event):
-        console.print(f"[green][+] File created:[/] {event.src_path}")
-        logging.info(f"[CREATED] {event.src_path}")
+        if not event.is_directory:
+            file_hash = calculate_hash(event.src_path)
+            file_hashes[event.src_path] = file_hash
+            console.print(f"[green][+] File created:[/] {event.src_path}")
+            logging.info(f"[CREATED] {event.src_path} | Hash: {file_hash}")
 
     def on_deleted(self, event):
-        console.print(f"[red][-] File deleted:[/] {event.src_path}")
-        logging.warning(f"[DELETED] {event.src_path}")
+        if not event.is_directory:
+            console.print(f"[red][-] File deleted:[/] {event.src_path}")
+            logging.warning(f"[-] File deleted: {event.src_path}")
+            alert_logger.warning(f"[ALERT] File deleted: {event.src_path}")
 
     def on_modified(self, event):
-        now = time.time()
-        last_time = last_modified_times.get(event.src_path, 0)
-        if now - last_time > 2:  # 2 saniyeden eskiyse logla
-            console.print(f"[yellow][!] File modified:[/] {event.src_path}")
-            logging.warning(f"[MODIFIED] {event.src_path}")
-            last_modified_times[event.src_path] = now
+        if not event.is_directory:
+            now = time.time()
+            last_time = last_modified_times.get(event.src_path, 0)
+            if now - last_time > 2:
+                new_hash = calculate_hash(event.src_path)
+                old_hash = file_hashes.get(event.src_path)
+                if old_hash != new_hash:
+                    file_hashes[event.src_path] = new_hash
+                    console.print(f"[yellow][!] File modified (hash changed):[/] {event.src_path}")
+                    logging.warning(f"[MODIFIED] {event.src_path} | New Hash: {new_hash}")
+                    alert_logger.warning(f"[ALERT] Hash changed for: {event.src_path}")
+                else:
+                    console.print(f"[yellow][!] File modified (no content change):[/] {event.src_path}")
+                last_modified_times[event.src_path] = now
 
 if __name__ == "__main__":
     logging.basicConfig(
