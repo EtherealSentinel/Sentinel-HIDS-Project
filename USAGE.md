@@ -19,7 +19,7 @@ It monitors a specified directory for file system events such as creation, delet
    ```
 3. Install the required Python packages:
    ```bash
-   pip install watchdog rich
+   pip install watchdog rich psutil
    ```
 
 ---
@@ -48,23 +48,25 @@ python main.py
 
 - You will see color-coded alerts in your terminal:
   - 🟩 Green → File created
-  - 🔵 Red → File deleted
+  - 🔴 Red → File deleted
   - 🟨 Yellow → File modified
 
 - All events are also logged in the `alerts.log` file.
+- Critical events such as file deletions and hash changes are separately logged in `critical_alerts.log`.
 
 ---
 
 ## 📝 Notes
 
 - Modified events are filtered to avoid duplicate logging within a short period.
+- SHA-256 hashes are calculated for files to detect real content changes.
 - The system is lightweight and intended for educational and research purposes.
 
 ---
 
 ## 📈 Roadmap
 
-- [ ] Hash-based modification detection
+- [x] Hash-based modification detection
 - [ ] Webhook or email alert integration
 - [ ] Multi-directory monitoring
 - [ ] GUI development (optional)
