@@ -1,1 +1,5 @@
 2025-04-27 14:51:53,541 - [ALERT] File deleted: ./test_directory\Alerttest.txt
+2025-04-28 11:40:43,549 - [ALERT] Hash changed for: ./test_directory\asdasd.txt
+2025-04-28 12:09:37,491 - [ALERT] Hash changed for: ./test_directory\Test.txt
+2025-04-28 12:14:58,411 - [ALERT] Hash changed for: ./test_directory\Test.txt
+2025-04-28 12:31:31,813 - [ALERT] Hash changed for: ./test2_directory\test2.txt

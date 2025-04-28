@@ -1,14 +1,13 @@
-2025-04-25 13:53:54 - [+] File created: ./test_directory\asdasd.txt
-2025-04-25 13:54:19 - [-] File deleted: ./test_directory\deneme.txt
-2025-04-25 14:01:23 - [+] File created: ./test_directory\Test.txt
-2025-04-26 13:26:39 - [+] File created: ./test_directory\test_rich2.txt
-2025-04-26 13:38:19 - [+] File created: ./test_directory\TestConfig_json.txt
-2025-04-26 13:43:04 - [!] File modified: ./test_directory\test_rich2.txt
-
-2025-04-27 14:44:35 - [MODIFIED] ./test_directory\Test.txt | New Hash: b5d764cc3ab7616f7306d0689557d83eb8d60ecd2bc9d1b6fbabeb4088eacf8e
-2025-04-27 14:44:50 - [CREATED] ./test_directory\hashtest.txt | Hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-2025-04-27 14:44:57 - [MODIFIED] ./test_directory\Test.txt | New Hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-2025-04-27 14:45:42 - [DELETED] ./test_directory\test_rich2.txt
-2025-04-27 14:51:40 - [CREATED] ./test_directory\Alerttest.txt | Hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-2025-04-27 14:51:53 - [-] File deleted: ./test_directory\Alerttest.txt
-2025-04-27 14:51:53 - [ALERT] File deleted: ./test_directory\Alerttest.txt
+2025-04-28 11:40:15 - [CREATED] ./test_directory\asdasd.txt | Hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-04-28 11:40:18 - [MODIFIED] ./test_directory\asdasd.txt | New Hash: 45c698ccb1b1abc2fd13c5b925622c559a6c65624d8107da5f7ffec31f57070d
+2025-04-28 11:40:18 - [ALERT] Hash changed for: ./test_directory\asdasd.txt
+2025-04-28 11:40:43 - [MODIFIED] ./test_directory\asdasd.txt | New Hash: b15a413c9ebf87bc55c741c47fd63216d65947ab3a40aedb884504472c10d622
+2025-04-28 11:40:43 - [ALERT] Hash changed for: ./test_directory\asdasd.txt
+2025-04-28 12:09:37 - [MODIFIED] ./test_directory\Test.txt | New Hash: 0c8f3a1bdb762f3d771ce805448bcaf9eb9c0bd6c5523a8bf09dd9c75a0ce8fe
+2025-04-28 12:09:37 - [ALERT] Hash changed for: ./test_directory\Test.txt
+2025-04-28 12:14:58 - [MODIFIED] ./test_directory\Test.txt | New Hash: ff829000e74f5c22f237b5b7fbfc11c25c6adda686573215b23c31c36a24676f
+2025-04-28 12:14:58 - [ALERT] Hash changed for: ./test_directory\Test.txt
+2025-04-28 12:26:22 - [CREATED] ./test_directory\test1.txt | Hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-04-28 12:31:22 - [CREATED] ./test2_directory\test2.txt | Hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-04-28 12:31:31 - [MODIFIED] ./test2_directory\test2.txt | New Hash: a92f0449a9f7235bf69dc2e8ff7070bfae3f00ec8f8f26e5457a9beac53466ac
+2025-04-28 12:31:31 - [ALERT] Hash changed for: ./test2_directory\test2.txt
