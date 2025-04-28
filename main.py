@@ -10,7 +10,7 @@ import requests
 
 observers = []
 
-#işletim sissteminden kaynaklanan çok kısa süre içerisinden birden çok modified logunun kayıt altına alınmasını engellemek için eklendi
+#işletim sissteminden kaynaklanan çok kısa süre içerisinden birden çok modified logunun kayıt altına alınmasını engellemek için eklendi.
 
 last_modified_times = {}
 
