@@ -2,8 +2,8 @@
 
 ## 🚀 Introduction
 
-Sentinel-HIDS is a lightweight Host-Based Intrusion Detection System (HIDS) built in Python.  
-It monitors a specified multiple directory for file system events such as creation, deletion, and modification.
+Sentinel-HIDS is a lightweight Host-Based Intrusion Detection System (HIDS) built with Python.
+It monitors multiple directories for file system events such as creation, deletion, and modification in real time.
 
 ---
 
@@ -19,22 +19,25 @@ It monitors a specified multiple directory for file system events such as creati
    ```
 3. Install the required Python packages:
    ```bash
-   pip install watchdog rich psutil
+   pip install watchdog rich psutil requests
    ```
 
 ---
 
 ## ⚙️ Configuration
 
-You can configure the monitored directory by editing the `config.json` file:
+You can configure which directories to monitor by editing the config.json file.
+This allows for easy customization.
 
 ```json
 {
-    "monitor_path": "./test_directory"
+    "monitor_paths": ["./test_directory", "./another_directory"],
+    "webhook_url": "https://your_webhook_url_here"
 }
+
 ```
-- Set the `monitor_path` to the folder you want to monitor.
-- By default, it monitors the `./test_directory` directory inside the project.
+- monitor_paths: List of directories you want to monitor (can include multiple paths).
+- webhook_url: Optional — URL for sending critical alerts via Webhook.
 
 ---
 
@@ -58,18 +61,18 @@ python main.py
 
 ## 📝 Notes
 
-- Modified events are filtered to avoid duplicate logging within a short period.
+- Modified events are filtered to avoid duplicate logging within a short period (to avoid redundancy).
 - SHA-256 hashes are calculated for files to detect real content changes.
-- The system is lightweight and intended for educational and research purposes.
+- The system is lightweight and primarily intended for educational and research purposes.
 
 ---
 
 ## 📈 Roadmap
 
 - [x] Hash-based modification detection
-- [x] Webhook or email alert integration
+- [x] Webhook integration for real-time alerts
 - [x] Multi-directory monitoring
-- [ ] GUI development 
+- [ ] GUI development (optional future update) 
 
 ---
 
