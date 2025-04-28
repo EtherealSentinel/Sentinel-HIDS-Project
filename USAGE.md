@@ -3,7 +3,7 @@
 ## 🚀 Introduction
 
 Sentinel-HIDS is a lightweight Host-Based Intrusion Detection System (HIDS) built in Python.  
-It monitors a specified directory for file system events such as creation, deletion, and modification.
+It monitors a specified multiple directory for file system events such as creation, deletion, and modification.
 
 ---
 
@@ -67,9 +67,9 @@ python main.py
 ## 📈 Roadmap
 
 - [x] Hash-based modification detection
-- [ ] Webhook or email alert integration
-- [ ] Multi-directory monitoring
-- [ ] GUI development (optional)
+- [x] Webhook or email alert integration
+- [x] Multi-directory monitoring
+- [ ] GUI development 
 
 ---
 
